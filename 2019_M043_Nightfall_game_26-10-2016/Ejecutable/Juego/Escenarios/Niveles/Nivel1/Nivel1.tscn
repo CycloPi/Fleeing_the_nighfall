@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/Nivel1.gd" type="Script" id=1]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/fondo.png" type="Texture" id=2]
+[ext_resource path="res://Ejecutable/Juego/Jugador/Tren.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/transpa.png" type="Texture" id=4]
+[ext_resource path="res://Ejecutable/Menu/Fuentes/Hexadecimal.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/circulo.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 85
+font_data = ExtResource( 5 )
+
+[node name="Nivel1" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="terreno" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Velocidad" type="Timer" parent="terreno"]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="terreno2" type="Sprite" parent="."]
+position = Vector2( -1024, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Label" type="Label" parent="terreno2"]
+visible = false
+margin_left = 27.9615
+margin_top = 511.295
+margin_right = 163.962
+margin_bottom = 585.295
+text = "terre 222222"
+
+[node name="Tren" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2.78955, 25.1055 )
+scale = Vector2( 0.85, 0.85 )
+
+[node name="Nightfall" type="Sprite" parent="."]
+position = Vector2( 854.46, -7.12384 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="nightfall" type="Label" parent="Nightfall"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -1017.59
+margin_top = 510.932
+margin_right = -677.588
+margin_bottom = 735.932
+custom_fonts/font = SubResource( 1 )
+text = "Nightfall"
+align = 1
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 1.03503
+margin_top = 10.0
+margin_right = 200.035
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 1 )
+text = "30"
+align = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 841.244, 71.2439 )
+scale = Vector2( 1.20728, 0.465865 )
+texture = ExtResource( 6 )
+
+[node name="velo2alta" type="Label" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 406.68
+margin_top = 159.262
+margin_right = 1009.68
+margin_bottom = 384.262
+custom_fonts/font = SubResource( 1 )
+text = "Cuidado velocidad
+ demasiado alta"
+align = 1
+
+[node name="velo" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 744.999
+margin_top = 38.5241
+margin_right = 943.999
+margin_bottom = 122.524
+custom_fonts/font = SubResource( 1 )
+text = "30"
+align = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 16.0
+margin_top = -29.0
+margin_right = 1040.0
+margin_bottom = 616.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="terreno/Velocidad" to="." method="_on_Velocidad_timeout"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

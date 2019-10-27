@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/menu_espera.wav-778c81d5871a8a2895de98c742041a81.sample"
+
+[deps]
+
+source_file="res://Ejecutable/Menu/Dios/Sonidos/menu_espera.wav"
+dest_files=[ "res://.import/menu_espera.wav-778c81d5871a8a2895de98c742041a81.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=1
