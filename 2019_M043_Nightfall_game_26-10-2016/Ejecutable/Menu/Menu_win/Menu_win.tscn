@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Ejecutable/Menu/Menu_game_over/Menu_game_over.gd" type="Script" id=1]
 [ext_resource path="res://Ejecutable/Menu/Menu_entrar/Fondo_menu.png" type="Texture" id=2]
-[ext_resource path="res://Ejecutable/Menu/Fuentes/KIN668.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Ejecutable/Menu/Menu_win/win_baner.png" type="Texture" id=3]
+[ext_resource path="res://Ejecutable/Menu/Fuentes/KIN668.TTF" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [node name="Menu_game_over" type="Node"]
 script = ExtResource( 1 )
@@ -17,6 +18,13 @@ script = ExtResource( 1 )
 position = Vector2( 0.420865, -1.94803 )
 texture = ExtResource( 2 )
 centered = false
+
+[node name="Sprite" type="Sprite" parent="Botones/Fondo_menu_entrar"]
+position = Vector2( -8.20221, 2.05057 )
+
+[node name="win_baner" type="Sprite" parent="Botones/Fondo_menu_entrar/Sprite"]
+position = Vector2( 280.956, 419.978 )
+texture = ExtResource( 3 )
 
 [node name="Inicio" type="Button" parent="Botones"]
 margin_left = 560.0
